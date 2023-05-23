@@ -1,10 +1,11 @@
-package com.backendFrameworkWeb.gerenciadorDocumentos.food;
+package com.backendFrameworkWeb.gerenciadorDocumentos.manual;
 
-import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+
+import javax.persistence.*;
 
 
 @Table(name = "manual")
@@ -15,7 +16,8 @@ import lombok.NoArgsConstructor;
 @EqualsAndHashCode(of = "id")
 public class Manual {
 
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String nome;

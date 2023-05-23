@@ -1,9 +1,9 @@
 package com.backendFrameworkWeb.gerenciadorDocumentos.controller;
 
-import com.backendFrameworkWeb.gerenciadorDocumentos.food.Manual;
-import com.backendFrameworkWeb.gerenciadorDocumentos.food.ManualRepository;
-import com.backendFrameworkWeb.gerenciadorDocumentos.food.ManualRequestDTO;
-import com.backendFrameworkWeb.gerenciadorDocumentos.food.ManualResponseDTO;
+import com.backendFrameworkWeb.gerenciadorDocumentos.manual.Manual;
+import com.backendFrameworkWeb.gerenciadorDocumentos.manual.ManualRepository;
+import com.backendFrameworkWeb.gerenciadorDocumentos.manual.ManualRequestDTO;
+import com.backendFrameworkWeb.gerenciadorDocumentos.manual.ManualResponseDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,17 +17,17 @@ public class ManualController{
 
     @CrossOrigin(origins = "*", allowedHeaders = "*")
     @PostMapping
-    public void saveFood(@RequestBody ManualRequestDTO data){
-       Manual foodData = new Manual(data);
-        repository.save(foodData);
+    public void saveManual(@RequestBody ManualRequestDTO data){
+       Manual manualData = new Manual(data);
+        repository.save(manualData);
         return;
     }
     @CrossOrigin(origins = "*", allowedHeaders = "*")
     @GetMapping
     public List<ManualResponseDTO> getAll(){
 
-            List<ManualResponseDTO> foodList = repository.findAll().stream().map(ManualResponseDTO::new).toList();
-            return foodList;
+            List<ManualResponseDTO> manualList = repository.findAll().stream().map(ManualResponseDTO::new).toList();
+            return manualList;
 
     }
 }

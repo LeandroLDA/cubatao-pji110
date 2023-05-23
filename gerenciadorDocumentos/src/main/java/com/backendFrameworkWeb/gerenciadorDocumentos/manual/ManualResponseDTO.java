@@ -1,8 +1,8 @@
-package com.backendFrameworkWeb.gerenciadorDocumentos.food;
+package com.backendFrameworkWeb.gerenciadorDocumentos.manual;
 
 public record ManualResponseDTO(Long id, String nome, String descricao, String link) {
-    public ManualResponseDTO(Manual food){
-        this(food.getId(), food.getNome(), food.getDescricao(), food.getLink());
+    public ManualResponseDTO(Manual manual){
+        this(manual.getId(), manual.getNome(), manual.getDescricao(), manual.getLink());
     }
 
 }
